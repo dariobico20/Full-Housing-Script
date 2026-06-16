@@ -135,8 +135,8 @@ AddEventHandler('housing:requestHouses', function()
     TriggerClientEvent('housing:syncHouses', playerId, allHouses)
 end)
 
--- Job payment
-setTimeout(Config.PaymentInterval, function()
+-- Job payment - Fixed: SetTimeout instead of setTimeout
+SetTimeout(Config.PaymentInterval, function()
     PayAllRealEstateAgents()
     print("^2[Housing] Paid all real estate agents^7")
 end)
